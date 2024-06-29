@@ -1,6 +1,5 @@
-﻿namespace Lib.ShapesFactory.Models
+﻿namespace Lib.ShapesFactory.Models;
+
+public record BaseShapeModel
 {
-    public record BaseShapeModel
-    {
-    }
 }

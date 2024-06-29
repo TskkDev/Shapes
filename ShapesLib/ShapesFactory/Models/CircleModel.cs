@@ -1,8 +1,6 @@
-﻿
-namespace Lib.ShapesFactory.Models
+﻿namespace Lib.ShapesFactory.Models;
+
+public record CircleModel : BaseShapeModel
 {
-    public record CircleModel : BaseShapeModel
-    {
-        public double Radius { get; init; }
-    }
+    public double Radius { get; init; }
 }

@@ -2,24 +2,25 @@
 using Lib.ShapesFactory.Models;
 using Lib.ShapesFactory.Shapes;
 
-namespace Lib.ShapesFactory
+namespace Lib.ShapesFactory;
+
+public sealed class ShapesFactory : IShapeFactory
 {
-    public sealed class ShapesFactory : IShapeFactory
+    #region Public Methods
+    public T CreateShape<T>(BaseShapeModel model) where T : IShape
     {
-        public T CreateShape<T>(BaseShapeModel model) where T : IShape
+        if (typeof(T) == typeof(Circle))
         {
-            if (typeof(T) == typeof(Circle))
-            {
-                return (T)(object)new Circle((CircleModel)model);
-            }
-            else if (typeof(T) == typeof(Triangle))
-            {
-                return (T)(object)new Triangle((TriangleModel)model);
-            }
-            else
-            {
-                throw new NotSupportedException("unsupported shape");
-            }
+            return (T)(object)new Circle((CircleModel)model);
+        }
+        else if (typeof(T) == typeof(Triangle))
+        {
+            return (T)(object)new Triangle((TriangleModel)model);
+        }
+        else
+        {
+            throw new NotSupportedException("unsupported shape");
         }
     }
+    #endregion
 }
