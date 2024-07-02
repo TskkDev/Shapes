@@ -1,5 +1,5 @@
 ﻿namespace Lib.ShapesFactory.Models;
 
-public record BaseShapeModel
+public abstract record BaseShapeModel
 {
 }
